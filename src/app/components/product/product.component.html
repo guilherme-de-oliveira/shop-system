@@ -1,0 +1,20 @@
+
+<p-dataView #dv [value]="products" [layout]="layout">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-end">
+            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="listItem">
+        <div class="col-12">
+            <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+                <app-card-item [product]="product"></app-card-item>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="gridItem">
+        <div class="col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
+            <app-card-item-grid [product]="product"></app-card-item-grid>
+        </div>
+    </ng-template>
+</p-dataView>
