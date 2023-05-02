@@ -1,3 +1,4 @@
+import { ICart } from "src/app/models/cart.interface";
 
 export interface ICustomer {
     id: number;
@@ -23,3 +24,8 @@ export interface IProduct {
     image?: string;
     rating?: number;
 }
+
+export interface AppStateInterface {
+    cart: ICart;
+  }
+  

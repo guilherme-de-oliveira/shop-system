@@ -1,0 +1,2 @@
+<p-toast></p-toast>
+<button pButton icon="pi pi-shopping-cart" class="p-button-rounded" (click)="addToCart(product)" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></button>

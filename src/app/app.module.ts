@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { cartReducer } from './reducers/cart.reducer';
 
 import { DividerModule } from 'primeng/divider';
 import { MenubarModule } from 'primeng/menubar';
@@ -21,6 +24,11 @@ import { CardItemGridComponent } from './components/card-item-grid/card-item-gri
 import { RatingModule } from 'primeng/rating';
 import { TagModule } from 'primeng/tag';
 import { DataViewModule } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
+import { ButtonAddComponent } from './components/button-add/button-add.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -34,8 +42,10 @@ import { DataViewModule } from 'primeng/dataview';
     PageNotFoundComponent,
     MainSearchComponent,
     CardItemGridComponent,
+    ButtonAddComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -45,7 +55,14 @@ import { DataViewModule } from 'primeng/dataview';
     InputTextModule,
     RatingModule,
     TagModule,
-    DataViewModule
+    DataViewModule,
+    DropdownModule,
+    ToastModule,
+    StoreModule.forRoot({
+      cart: cartReducer
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
