@@ -13,7 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { cartReducer } from './reducers/cart.reducer';
+import {reducers} from './store/product.reducers'
 
 import { DividerModule } from 'primeng/divider';
 import { MenubarModule } from 'primeng/menubar';
@@ -28,7 +28,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -59,10 +58,9 @@ import { EffectsModule } from '@ngrx/effects';
     DropdownModule,
     ToastModule,
     StoreModule.forRoot({
-      cart: cartReducer
+      products: reducers
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

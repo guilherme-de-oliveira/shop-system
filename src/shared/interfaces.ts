@@ -1,5 +1,3 @@
-import { ICart } from "src/app/models/cart.interface";
-
 export interface ICustomer {
     id: number;
     firstName: string;
@@ -25,7 +23,12 @@ export interface IProduct {
     rating?: number;
 }
 
+export interface ICart {
+    products: IProduct[],
+    error: string | null
+}
+
 export interface AppStateInterface {
-    cart: ICart;
-  }
-  
+    products: ICart;
+}
+

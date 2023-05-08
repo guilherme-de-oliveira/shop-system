@@ -13,7 +13,8 @@ export class CartService {
   constructor() { }
 
   getCart() {
-    let resp: IProduct[];
+    let resp: IProduct;
+    console.log('hmmm')
     return of(resp);
   }
 

@@ -1,3 +1,2 @@
-<p-button label="Cart" icon="pi pi-shopping-cart" badge="{{ (cart$ | async)! }}" badgeClass="p-badge-danger"></p-button>
+<p-button label="Cart" icon="pi pi-shopping-cart" badge="{{ (cart$ | async).length  }}" badgeClass="p-badge-danger"></p-button>
 <button pButton pRipple type="button" label="Login" class="p-button-text" routerLink="login"></button>
-opa: {{ (cart$ | async)! }}

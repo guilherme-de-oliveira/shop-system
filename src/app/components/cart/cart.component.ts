@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { CartModel } from 'src/app/models/cart.interface';
-import { selectBookCollection } from './cart.selector';
+import { IProduct } from 'src/shared/interfaces';
+import { AppStateInterface } from 'src/shared/interfaces';
+import { cartSelector } from 'src/app/store/product.selectors';
 
 @Component({
   selector: 'app-cart',
@@ -10,13 +11,14 @@ import { selectBookCollection } from './cart.selector';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent {
-  cart$: Observable<CartModel[]>;
-  
-  // count$: Observable<number>;
+  cart$: Observable<IProduct[]>;
 
-  constructor(private store: Store<{cart: CartModel}>) { 
-    // this.cart$ = store.pipe(select('cart'));
-    this.cart$ = this.store.select(selectBookCollection)
-    console.log(this.cart$)
+  constructor(private store: Store<AppStateInterface>) { 
+    this.cart$ = this.store.pipe(select(cartSelector));
+    
+  }
+
+  ngOnInit(): void {
+
   }
 }

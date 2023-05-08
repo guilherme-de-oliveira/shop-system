@@ -2,12 +2,12 @@ import { createAction, props } from "@ngrx/store";
 import { IProduct } from "src/shared/interfaces";
 
 export const getCart = createAction(
-    '[Cart] Get Cart'
+    '[Cart] Get Cart Items',
 );
 
 export const postCart = createAction(
     '[Cart] Post Cart',
-    props<{ products: IProduct[]}>()
+    props<{ products: IProduct}>()
 );
 
 export const getCartFailure = createAction(
