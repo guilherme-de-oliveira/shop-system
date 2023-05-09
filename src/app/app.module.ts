@@ -13,7 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import {reducers} from './store/product.reducers'
+import { reducers } from './store/product.reducers'
 
 import { DividerModule } from 'primeng/divider';
 import { MenubarModule } from 'primeng/menubar';
@@ -26,7 +26,7 @@ import { TagModule } from 'primeng/tag';
 import { DataViewModule } from 'primeng/dataview';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
-import { ButtonAddComponent } from './components/button-add/button-add.component';
+import { ButtonAddComponent } from './components/cart-options/cart-options.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CartListComponent } from './components/cart-list/cart-list.component';
 

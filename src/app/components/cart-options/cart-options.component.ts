@@ -8,9 +8,9 @@ import { cartSelector } from 'src/app/store/product.selectors';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-button-add',
-  templateUrl: './button-add.component.html',
-  styleUrls: ['./button-add.component.scss'],
+  selector: 'app-cart-options',
+  templateUrl: './cart-options.component.html',
+  styleUrls: ['./cart-options.component.scss'],
   providers: [MessageService]
 })
 export class ButtonAddComponent implements OnInit{

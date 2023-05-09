@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonAddComponent } from './button-add.component';
+import { ButtonAddComponent } from './cart-options.component';
 
 describe('ButtonAddComponent', () => {
   let component: ButtonAddComponent;
