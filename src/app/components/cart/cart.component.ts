@@ -14,11 +14,7 @@ export class CartComponent {
   cart$: Observable<IProduct[]>;
 
   constructor(private store: Store<AppStateInterface>) { 
-    this.cart$ = this.store.pipe(select(cartSelector));
-    
+    this.cart$ = this.store.pipe(select(cartSelector)); // Used for cart length badge
   }
 
-  ngOnInit(): void {
-
-  }
 }

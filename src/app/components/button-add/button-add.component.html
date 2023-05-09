@@ -1,2 +1,16 @@
 <p-toast></p-toast>
-<button pButton icon="pi pi-shopping-cart" class="p-button-rounded" (click)="addToCart(product)" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></button>
+<button 
+    pButton
+    *ngIf="path === 'home'" 
+    icon="pi pi-shopping-cart" 
+    class="p-button-rounded" 
+    (click)="addToCart(product)" 
+    [disabled]="product.inventoryStatus === 'OUTOFSTOCK'">
+</button>
+<button 
+    pButton
+    *ngIf="path === 'cart-list'" 
+    icon="pi pi-trash" 
+    class="p-button-text p-button-rounded p-button-danger" 
+    (click)="removeFromCart(product)">
+</button>

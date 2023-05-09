@@ -1,2 +1,13 @@
-<p-button label="Cart" icon="pi pi-shopping-cart" badge="{{ (cart$ | async).length  }}" badgeClass="p-badge-danger"></p-button>
-<button pButton pRipple type="button" label="Login" class="p-button-text" routerLink="login"></button>
+<p-button 
+    label="Cart" 
+    icon="pi pi-shopping-cart" 
+    badge="{{ (cart$ | async).length  }}" 
+    badgeClass="p-badge-danger"
+    [routerLink]="['cart-list', cart$]"
+></p-button>
+<p-button 
+    styleClass="p-button-secondary p-button-text" 
+    label="Login" 
+    class="p-button-text"
+    routerLink="login">
+</p-button>

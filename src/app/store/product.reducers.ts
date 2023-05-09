@@ -7,20 +7,29 @@ export const initialState: ICart = {
   error: null,
 };
 
-
 export const reducers = createReducer(
   initialState,
   on(PostsActions.getCart, (state) => ({
     ...state,
   })),
   on(PostsActions.postCart, (state, action) => {
-    console.log(action)
     state = {
       ...state,
       products: [...state.products, action.products]
     }
 
-    console.log(state.products)
+    return state;
+  }),
+  on(PostsActions.removeItemFromCart, (state, action) => {
+    const products = [...state.products];
+    const index = products.findIndex(x => x.id === action.product.id);
+    products.splice(index, 1);
+    
+    state = {
+      ...state,
+      products: products
+    }
+
     return state;
   }),
   on(PostsActions.getCartFailure, (state, action) => ({

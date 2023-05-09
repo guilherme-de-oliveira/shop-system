@@ -7,9 +7,13 @@ export const getCart = createAction(
 
 export const postCart = createAction(
     '[Cart] Post Cart',
-    props<{ products: IProduct}>()
+    props<{ products: IProduct }>()
 );
 
+export const removeItemFromCart = createAction(
+    '[Cart] Remove Item from Cart',
+    props<{ product: IProduct }>()
+)
 export const getCartFailure = createAction(
     '[Cart] Get Cart failure',
     props<{ error: string }>()

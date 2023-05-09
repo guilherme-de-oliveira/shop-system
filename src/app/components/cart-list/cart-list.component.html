@@ -1,0 +1,7 @@
+<p-dataView #dv [value]="cart$ | async" emptyMessage="Cart is empty">
+    <ng-template let-product pTemplate="listItem">
+        <div class="col-12">
+            <app-card-item [product]="product"></app-card-item>
+        </div>
+    </ng-template>
+</p-dataView>

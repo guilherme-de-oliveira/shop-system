@@ -28,6 +28,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CartListComponent } from './components/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MainSearchComponent,
     CardItemGridComponent,
     ButtonAddComponent,
+    CartListComponent,
   ],
   imports: [
     BrowserAnimationsModule,
