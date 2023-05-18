@@ -13,8 +13,9 @@ export const postCart = createAction(
 export const removeItemFromCart = createAction(
     '[Cart] Remove Item from Cart',
     props<{ product: IProduct }>()
-)
+);
+
 export const getCartFailure = createAction(
     '[Cart] Get Cart failure',
     props<{ error: string }>()
-  );
+);
