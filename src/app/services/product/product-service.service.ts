@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IProduct } from 'src/shared/interfaces';
     
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'platform',
 })
 export class ProductService {
     getProductsData() {
